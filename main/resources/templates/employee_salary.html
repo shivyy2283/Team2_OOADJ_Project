@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Salary Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <style>
+
+        body {
+                padding-top: 50px;
+                font-family: "Times New Roman", Times, serif;
+                }
+    </style>
+</head>
+<body>
+<div class="container my-2">
+    <h1 th:text="'SALARY LOG FOR ' + ${username}"></h1>
+    <br>
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Pay Day</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="payroll : ${payrollList}">
+            <td th:text="${payroll.userId}"></td>
+            <td th:text="${payroll.username}"></td>
+            <td th:text="${payroll.position}"></td>
+            <td th:text="${payroll.salary}"></td>
+            <td th:text="${payroll.payDay}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

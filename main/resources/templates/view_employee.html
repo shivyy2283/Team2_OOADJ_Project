@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Employee Details</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <style>
+        .container {
+            text-align: center; /* Center-align the content */
+        }
+        .personal-info,
+        .job-related-info {
+            width: 45%; /* Decrease the width to allow space between sections */
+            display: inline-block; /* Display inline to allow side-by-side alignment */
+            margin: 0 2.5%; /* Add margin for spacing between sections */
+        }
+        .employee-name {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Employee Details</h1>
+    <br>
+    <h2 class="employee-name" th:text="${employee.name}"></h2> <!-- Center-aligned employee name -->
+    <br>
+    <div class="personal-info">
+        <h2>Personal Information</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>User ID:</strong> <span th:text="${employee.userid}"></span>
+            </li>
+            <li class="list-group-item">
+                <strong>Email:</strong> <span th:text="${employee.email_id}"></span>
+            </li>
+            <li class="list-group-item">
+                <strong>Phone Number:</strong> <span th:text="${employee.userPhone}"></span>
+            </li>
+            <li class="list-group-item">
+                <strong>Address:</strong> <span th:text="${employee.address}"></span>
+            </li>
+            <li class="list-group-item">
+                <strong>Date of Birth:</strong> <span th:text="${employee.dob}"></span>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="job-related-info">
+        <h2>Job-Related Information</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>Position:</strong> <span th:text="${employee.position}"></span>
+            </li>
+            <li class="list-group-item">
+                <strong>Date of Joining:</strong> <span th:text="${employee.date_of_joining}"></span>
+            </li>
+            <li class="list-group-item">
+                <strong>Department:</strong> <span th:text="${employee.department}"></span>
+            </li>
+        </ul>
+    </div>
+    <div style="clear: both;"></div>
+    <br>
+</div>
+</body>
+</html>
